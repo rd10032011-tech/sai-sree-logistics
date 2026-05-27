@@ -64,7 +64,7 @@ export default function AboutUs() {
                   { icon: Calendar, label: 'Established', value: '2015' },
                   { icon: ShieldCheck, label: 'GST Number', value: '33AVFPS0910J1ZN' },
                   { icon: MapPin, label: 'Headquarters', value: 'Kannigaipur, Thiruvallur (Dist), Tamilnadu - 601102' },
-                  { icon: Phone, label: 'Contact', value: '+91 98409 23192' },
+                  { icon: Phone, label: 'Contact', value: '+91 97911 20354' },
                   { icon: Mail, label: 'Email', value: 'saisreelogistics16@gmail.com' },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-6 items-center">

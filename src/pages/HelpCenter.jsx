@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 const topics = [
-  { q: 'How do I get a quote?', a: 'Visit our Contact page or call +91 98409 23192. Provide your shipment details — volume, type of goods, pickup/delivery locations — and we\'ll respond within 2 hours with a customized proposal.' },
+  { q: 'How do I get a quote?', a: 'Visit our Contact page or call +91 97911 20354. Provide your shipment details — volume, type of goods, pickup/delivery locations — and we\'ll respond within 2 hours with a customized proposal.' },
   { q: 'What documents do I need for warehousing?', a: 'You\'ll need a signed storage agreement, goods receipt note, and GST invoice copy for incoming stock. We handle all ongoing documentation including Custodian Certificates, daily MIS reports, and bin card updates.' },
   { q: 'Can I track my shipments in real time?', a: 'Yes. Every shipment is tracked from pickup to delivery via GPS. You can contact our operations team for live tracking updates and ETA information at any time.' },
   { q: 'Do you provide manpower for short-term projects?', a: 'Absolutely. We offer both permanent and day-based temporary staffing. Whether you need 5 or 50 workers, we can scale within 24-48 hours. All workers are background-verified and trained.' },

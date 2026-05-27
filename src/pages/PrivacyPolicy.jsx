@@ -84,7 +84,7 @@ export default function PrivacyPolicy() {
       </p>
       <p className="text-gray-400 leading-relaxed mb-4">
         Email: <a href="mailto:saisreelogistics16@gmail.com" className="text-accent hover:underline">saisreelogistics16@gmail.com</a><br />
-        Phone: <a href="tel:+919840923192" className="text-accent hover:underline">+91 98409 23192</a><br />
+        Phone: <a href="tel:+919791120354" className="text-accent hover:underline">+91 97911 20354</a><br />
         Address: Kannigaipur, Thiruvallur (Dist), Tamilnadu - 601102
       </p>
     </PageShell>

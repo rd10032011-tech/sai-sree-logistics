@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     q: 'How do I start working with you?',
-    a: 'Simply call us at +91 98409 23192, email saisreelogistics16@gmail.com, or fill out the contact form on our website. We\'ll discuss your requirements, visit your facility if needed, and propose a tailored solution within 2 business days.',
+    a: 'Simply call us at +91 97911 20354, email saisreelogistics16@gmail.com, or fill out the contact form on our website. We\'ll discuss your requirements, visit your facility if needed, and propose a tailored solution within 2 business days.',
   },
   {
     q: 'Do you provide CCTV-monitored storage?',

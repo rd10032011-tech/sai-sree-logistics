@@ -196,10 +196,10 @@ export default function ServiceDetail() {
                 </svg>
               </Link>
               <a
-                href="tel:+919840923192"
+                href="tel:+919791120354"
                 className="border border-white/35 hover:border-white text-white font-semibold px-8 py-4 rounded-xl transition-all"
               >
-                Call +91 98409 23192
+                Call +91 97911 20354
               </a>
             </div>
           </div>

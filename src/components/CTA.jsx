@@ -66,7 +66,7 @@ export default function CTA() {
               <h3 className="text-2xl font-black text-white mb-8">Contact Our Experts</h3>
               <div className="space-y-6">
                 <a 
-                  href="tel:+919840923192" 
+                  href="tel:+919791120354" 
                   className="flex items-center gap-5 p-5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl transition-all duration-300 group"
                 >
                   <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-primary shadow-md group-hover:scale-105 transition-transform duration-300">
@@ -74,7 +74,7 @@ export default function CTA() {
                   </div>
                   <div>
                     <div className="text-white/80 text-[10px] font-bold uppercase tracking-widest mb-0.5">Call Now</div>
-                    <div className="text-lg sm:text-xl font-black text-white">+91 98409 23192</div>
+                    <div className="text-lg sm:text-xl font-black text-white">+91 97911 20354</div>
                   </div>
                 </a>
                 <a 

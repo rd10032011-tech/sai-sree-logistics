@@ -48,7 +48,7 @@ export default function Footer() {
               Kannigaipur, Thiruvallur (Dist), Tamilnadu - 601102.
             </p>
             <p className="text-gray-300 text-sm mb-1.5 font-medium">
-              <a href="tel:+919840923192" className="hover:text-primary transition-colors">+91 98409 23192</a>
+              <a href="tel:+919791120354" className="hover:text-primary transition-colors">+91 97911 20354</a>
             </p>
             <p className="text-gray-300 text-sm mb-5 font-medium">
               <a href="mailto:saisreelogistics16@gmail.com" className="hover:text-primary transition-colors">saisreelogistics16@gmail.com</a>

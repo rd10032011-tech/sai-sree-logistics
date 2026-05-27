@@ -161,7 +161,7 @@ export default function Contact() {
                 <div className="space-y-5">
                   {[
                     { label: 'Address', value: 'Kannigaipur, Thiruvallur (Dist), Tamilnadu - 601102' },
-                    { label: 'Phone', value: '+91 98409 23192', href: 'tel:+919840923192', icon: Phone },
+                    { label: 'Phone', value: '+91 97911 20354', href: 'tel:+919791120354', icon: Phone },
                     { label: 'Email', value: 'saisreelogistics16@gmail.com', href: 'mailto:saisreelogistics16@gmail.com', icon: Mail },
                     { label: 'GST', value: '33AVFPS0910J1ZN' },
                   ].map((item) => (
@@ -200,9 +200,9 @@ export default function Contact() {
               <div className="bg-gradient-to-br from-primary to-primary-dark rounded-3xl p-8 shadow-lg shadow-primary/20">
                 <h2 className="text-xl font-bold text-white mb-2">Need Immediate Help?</h2>
                 <p className="text-white/80 text-sm mb-5 font-medium">Call our operations team for urgent inquiries.</p>
-                <a href="tel:+919840923192" className="inline-flex items-center gap-2 bg-white text-primary font-extrabold px-6 py-3 rounded-xl hover:bg-gray-100 transition-all">
+                <a href="tel:+919791120354" className="inline-flex items-center gap-2 bg-white text-primary font-extrabold px-6 py-3 rounded-xl hover:bg-gray-100 transition-all">
                   <Phone size={16} />
-                  +91 98409 23192
+                  +91 97911 20354
                 </a>
               </div>
             </div>

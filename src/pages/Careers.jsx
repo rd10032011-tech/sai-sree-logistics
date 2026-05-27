@@ -82,7 +82,7 @@ export default function Careers() {
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent mb-4 tracking-tight">Careers</h1>
           <p className="text-gray-500 text-lg mb-6 leading-relaxed">Join the Sai Sree Logistics team and grow with us.</p>
           <p className="text-gray-500 mb-12">
-            Interested? Call us at <a href="tel:+919840923192" className="text-accent hover:underline">+91 98409 23192</a> or email your resume to{' '}
+            Interested? Call us at <a href="tel:+919791120354" className="text-accent hover:underline">+91 97911 20354</a> or email your resume to{' '}
             <a href="mailto:saisreelogistics16@gmail.com" className="text-accent hover:underline">saisreelogistics16@gmail.com</a>.
           </p>
 
