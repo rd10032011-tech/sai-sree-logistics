@@ -57,7 +57,7 @@ export default function Footer() {
             <p className="text-gray-500 text-xs font-semibold mb-6 tracking-wide">GST: 33AVFPS0910J1ZN</p>
             
             <div className="flex gap-3">
-              {['facebook', 'twitter', 'linkedin', 'instagram'].map((social) => (
+              {['twitter', 'linkedin', 'instagram'].map((social) => (
                 <a
                   key={social}
                   href="#"
