@@ -38,7 +38,7 @@ export default function PageShell({ title, subtitle, children }) {
             {title}
           </h1>
           {subtitle && (
-            <p className="text-accent/70 font-semibold text-base sm:text-lg mb-10 leading-relaxed">{subtitle}</p>
+            <p className="text-accent/80 font-semibold text-base sm:text-lg mb-10 leading-relaxed">{subtitle}</p>
           )}
 
           <div className="bg-white border border-gray-100 rounded-3xl p-8 sm:p-10 lg:p-12 shadow-sm">

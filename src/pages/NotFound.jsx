@@ -19,7 +19,7 @@ export default function NotFound() {
       <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-accent/5 rounded-full blur-[120px]" />
 
       <div ref={ref} className="opacity-0 translate-y-10 transition-all duration-700 text-center px-4">
-        <div className="text-[10rem] sm:text-[14rem] font-black text-gray-100 leading-none select-none">404</div>
+        <div className="text-[10rem] sm:text-[14rem] font-black text-accent/5 leading-none select-none">404</div>
         <h1 className="text-3xl sm:text-4xl font-black text-accent -mt-8 mb-4">Page Not Found</h1>
         <p className="text-accent/70 max-w-md mx-auto mb-10 text-lg">
           The page you're looking for doesn't exist or has been moved.

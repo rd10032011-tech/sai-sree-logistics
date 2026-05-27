@@ -152,7 +152,7 @@ export default function Hero() {
       {/* Partners/Sectors Infinite Marquee Slider */}
       <div className="w-full border-t border-gray-200/60 pt-8 mt-12 bg-white/40 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 mb-4">
-          <p className="text-xs font-bold text-gray-400 uppercase tracking-[0.2em]">Trusted Across Industries</p>
+          <p className="text-xs font-bold text-gray-500 uppercase tracking-[0.2em]">Trusted Across Industries</p>
         </div>
         
         {/* Infinite CSS Marquee */}
@@ -161,7 +161,7 @@ export default function Hero() {
             {sectors.concat(sectors).map((sector, index) => (
               <span 
                 key={index} 
-                className="text-sm font-extrabold tracking-[0.25em] text-gray-400/80 hover:text-primary transition-colors duration-300 select-none cursor-default"
+                className="text-sm font-extrabold tracking-[0.25em] text-gray-500 hover:text-primary transition-colors duration-300 select-none cursor-default"
               >
                 {sector}
               </span>

@@ -67,18 +67,18 @@ export default function Press() {
             Back to Home
           </Link>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight">Press</h1>
-          <p className="text-gray-400 text-lg mb-12 leading-relaxed">Media coverage and announcements from Sai Sree Logistics.</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent mb-4 tracking-tight">Press</h1>
+          <p className="text-gray-500 text-lg mb-12 leading-relaxed">Media coverage and announcements from Sai Sree Logistics.</p>
 
           <div className="space-y-4">
             {articles.map((article) => (
-              <div key={article.title} className="bg-dark-2/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all">
+              <div key={article.title} className="bg-dark-2/80 backdrop-blur-sm border border-gray-100/30 rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all">
                 <div className="flex items-center gap-3 mb-3">
                   <span className="bg-accent/10 text-accent text-xs font-medium px-3 py-1 rounded-full">{article.source}</span>
                   <span className="text-gray-600 text-xs">{article.date}</span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{article.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{article.excerpt}</p>
+                <h3 className="text-xl font-bold text-accent mb-2">{article.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{article.excerpt}</p>
               </div>
             ))}
           </div>

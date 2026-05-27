@@ -72,7 +72,7 @@ export default function AboutUs() {
                       <item.icon size={18} />
                     </div>
                     <div>
-                      <div className="text-gray-400 text-[10px] font-black uppercase tracking-[0.2em] mb-0.5">{item.label}</div>
+                      <div className="text-gray-500 text-[10px] font-black uppercase tracking-[0.2em] mb-0.5">{item.label}</div>
                       <div className="text-accent font-extrabold text-sm">{item.value}</div>
                     </div>
                   </div>

@@ -79,8 +79,8 @@ export default function Careers() {
             Back to Home
           </Link>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight">Careers</h1>
-          <p className="text-gray-400 text-lg mb-6 leading-relaxed">Join the Sai Sree Logistics team and grow with us.</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent mb-4 tracking-tight">Careers</h1>
+          <p className="text-gray-500 text-lg mb-6 leading-relaxed">Join the Sai Sree Logistics team and grow with us.</p>
           <p className="text-gray-500 mb-12">
             Interested? Call us at <a href="tel:+919840923192" className="text-accent hover:underline">+91 98409 23192</a> or email your resume to{' '}
             <a href="mailto:saisreelogistics16@gmail.com" className="text-accent hover:underline">saisreelogistics16@gmail.com</a>.
@@ -88,22 +88,22 @@ export default function Careers() {
 
           <div className="space-y-4">
             {positions.map((job) => (
-              <div key={job.title} className="bg-dark-2/80 backdrop-blur-sm border border-white/5 rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all">
+              <div key={job.title} className="bg-dark-2/80 backdrop-blur-sm border border-gray-100/30 rounded-2xl p-6 sm:p-8 hover:border-primary/30 transition-all">
                 <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-3">
-                  <h3 className="text-xl font-bold text-white">{job.title}</h3>
+                  <h3 className="text-xl font-bold text-accent">{job.title}</h3>
                   <div className="flex flex-wrap gap-2">
                     <span className="bg-accent/10 text-accent text-xs font-medium px-3 py-1 rounded-full">{job.type}</span>
-                    <span className="bg-white/5 text-gray-400 text-xs font-medium px-3 py-1 rounded-full">{job.location}</span>
+                    <span className="bg-white/5 text-gray-500 text-xs font-medium px-3 py-1 rounded-full">{job.location}</span>
                   </div>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed">{job.desc}</p>
+                <p className="text-gray-500 text-sm leading-relaxed">{job.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="mt-12 bg-dark-2/50 border border-white/5 rounded-2xl p-8 text-center">
-            <h2 className="text-xl font-bold text-white mb-3">Don't see the right role?</h2>
-            <p className="text-gray-400 text-sm mb-6">We're always looking for talented individuals. Send us your resume anyway.</p>
+          <div className="mt-12 bg-dark-2/50 border border-gray-100/30 rounded-2xl p-8 text-center">
+            <h2 className="text-xl font-bold text-accent mb-3">Don't see the right role?</h2>
+            <p className="text-gray-500 text-sm mb-6">We're always looking for talented individuals. Send us your resume anyway.</p>
             <a
               href="mailto:saisreelogistics16@gmail.com"
               className="bg-accent hover:bg-accent-dark text-dark font-semibold px-6 py-3 rounded-lg transition-all inline-block"

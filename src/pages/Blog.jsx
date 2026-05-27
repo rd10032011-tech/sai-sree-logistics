@@ -71,15 +71,15 @@ export default function Blog() {
             Back to Home
           </Link>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight">Blog</h1>
-          <p className="text-gray-400 text-lg mb-12 leading-relaxed">Insights and updates from Sai Sree Logistics.</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent mb-4 tracking-tight">Blog</h1>
+          <p className="text-gray-500 text-lg mb-12 leading-relaxed">Insights and updates from Sai Sree Logistics.</p>
 
           <div className="grid sm:grid-cols-2 gap-6">
             {posts.map((post) => (
-              <div key={post.title} className="bg-dark-2/80 backdrop-blur-sm border border-white/5 rounded-2xl p-8 hover:border-primary/30 transition-all group cursor-pointer">
+              <div key={post.title} className="bg-dark-2/80 backdrop-blur-sm border border-gray-100/30 rounded-2xl p-8 hover:border-primary/30 transition-all group cursor-pointer">
                 <p className="text-gray-600 text-xs mb-3">{post.date}</p>
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent transition-colors">{post.title}</h3>
-                <p className="text-gray-400 text-sm leading-relaxed">{post.excerpt}</p>
+                <h3 className="text-xl font-bold text-accent mb-3 group-hover:text-primary transition-colors">{post.title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{post.excerpt}</p>
                 <span className="inline-flex items-center gap-1 text-accent text-sm font-medium mt-4 group-hover:gap-2 transition-all">
                   Read More <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </span>

@@ -17,7 +17,6 @@ const footerLinks = {
   support: [
     { label: 'Help Center', to: '/help-center' },
     { label: 'Contact Us', to: '/contact' },
-    { label: 'Track Shipment', to: '/track-shipment' },
     { label: 'FAQs', to: '/faqs' },
     { label: 'Shipping Policy', to: '/shipping-policy' },
   ],
@@ -54,7 +53,7 @@ export default function Footer() {
             <p className="text-gray-300 text-sm mb-5 font-medium">
               <a href="mailto:saisreelogistics16@gmail.com" className="hover:text-primary transition-colors">saisreelogistics16@gmail.com</a>
             </p>
-            <p className="text-gray-500 text-xs font-semibold mb-6 tracking-wide">GST: 33AVFPS0910J1ZN</p>
+            <p className="text-gray-400 text-xs font-semibold mb-6 tracking-wide">GST: 33AVFPS0910J1ZN</p>
           </div>
 
           <div>
@@ -92,13 +91,13 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-gray-500 text-xs">
+          <p className="text-gray-400 text-xs">
             &copy; {new Date().getFullYear()} Sai Sree Logistics. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <Link to="/privacy-policy" className="text-gray-500 hover:text-white text-xs transition-colors duration-200">Privacy Policy</Link>
-            <Link to="/terms-of-service" className="text-gray-500 hover:text-white text-xs transition-colors duration-200">Terms of Service</Link>
-            <Link to="/cookie-policy" className="text-gray-500 hover:text-white text-xs transition-colors duration-200">Cookie Policy</Link>
+            <Link to="/privacy-policy" className="text-gray-400 hover:text-white text-xs transition-colors duration-200">Privacy Policy</Link>
+            <Link to="/terms-of-service" className="text-gray-400 hover:text-white text-xs transition-colors duration-200">Terms of Service</Link>
+            <Link to="/cookie-policy" className="text-gray-400 hover:text-white text-xs transition-colors duration-200">Cookie Policy</Link>
           </div>
         </div>
       </div>

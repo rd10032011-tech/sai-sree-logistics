@@ -11,7 +11,6 @@ import Press from './pages/Press.jsx'
 import Contact from './pages/Contact.jsx'
 import HelpCenter from './pages/HelpCenter.jsx'
 import Faqs from './pages/Faqs.jsx'
-import TrackShipment from './pages/TrackShipment.jsx'
 import ShippingPolicy from './pages/ShippingPolicy.jsx'
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx'
 import TermsOfService from './pages/TermsOfService.jsx'
@@ -34,7 +33,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/help-center" element={<HelpCenter />} />
           <Route path="/faqs" element={<Faqs />} />
-          <Route path="/track-shipment" element={<TrackShipment />} />
           <Route path="/shipping-policy" element={<ShippingPolicy />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />

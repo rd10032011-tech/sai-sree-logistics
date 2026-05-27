@@ -55,7 +55,7 @@ export default function OurTeam() {
               Meet the People Behind{' '}
               <span className="text-gradient-warm">Sai Sree</span>
             </h1>
-            <p className="text-accent/70 text-lg font-medium leading-relaxed">
+            <p className="text-accent/80 text-lg font-medium leading-relaxed">
               Every great logistics operation is built on people. Our leadership team brings 
               decades of combined experience, unwavering commitment, and a shared vision 
               to make supply chains simpler for every client we serve.

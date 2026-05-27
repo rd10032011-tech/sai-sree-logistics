@@ -142,7 +142,7 @@ export default function Contact() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full bg-primary hover:bg-primary-dark disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-extrabold py-4 rounded-xl transition-all shadow-md shadow-primary/10 flex items-center justify-center gap-2"
+                      className="w-full bg-primary hover:bg-primary-dark disabled:bg-gray-400 disabled:cursor-not-allowed text-white font-extrabold py-4 rounded-xl transition-all shadow-md shadow-primary/10 flex items-center justify-center gap-2"
                     >
                       {submitting ? (
                         <><Loader2 size={18} className="animate-spin" /> Sending...</>
@@ -172,7 +172,7 @@ export default function Contact() {
                         </div>
                       )}
                       <div>
-                        <p className="text-gray-400 text-xs font-bold uppercase tracking-wider mb-0.5">{item.label}</p>
+                        <p className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-0.5">{item.label}</p>
                         {item.href ? (
                           <a href={item.href} className="text-accent hover:text-primary transition-colors font-semibold text-sm">{item.value}</a>
                         ) : (
@@ -192,8 +192,8 @@ export default function Contact() {
                   <h2 className="text-xl font-bold text-accent">Office Hours</h2>
                 </div>
                 <div className="space-y-2 text-sm font-semibold">
-                  <div className="flex justify-between py-2 border-b border-gray-50"><span className="text-gray-400">Monday - Saturday</span><span className="text-accent">9:00 AM - 7:00 PM</span></div>
-                  <div className="flex justify-between py-2"><span className="text-gray-400">Sunday</span><span className="text-accent">Closed</span></div>
+                  <div className="flex justify-between py-2 border-b border-gray-50"><span className="text-gray-500">Monday - Saturday</span><span className="text-accent">9:00 AM - 7:00 PM</span></div>
+                  <div className="flex justify-between py-2"><span className="text-gray-500">Sunday</span><span className="text-accent">Closed</span></div>
                 </div>
               </div>
 

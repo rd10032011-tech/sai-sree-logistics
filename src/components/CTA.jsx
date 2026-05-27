@@ -73,7 +73,7 @@ export default function CTA() {
                     <Phone size={20} />
                   </div>
                   <div>
-                    <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-0.5">Call Now</div>
+                    <div className="text-white/80 text-[10px] font-bold uppercase tracking-widest mb-0.5">Call Now</div>
                     <div className="text-lg sm:text-xl font-black text-white">+91 98409 23192</div>
                   </div>
                 </a>
@@ -85,12 +85,12 @@ export default function CTA() {
                     <Mail size={20} />
                   </div>
                   <div>
-                    <div className="text-white/60 text-[10px] font-bold uppercase tracking-widest mb-0.5">Email Us</div>
+                    <div className="text-white/80 text-[10px] font-bold uppercase tracking-widest mb-0.5">Email Us</div>
                     <div className="text-lg sm:text-xl font-black text-white break-all">saisreelogistics16@gmail.com</div>
                   </div>
                 </a>
               </div>
-              <p className="text-white/55 text-xs text-center mt-8 font-semibold tracking-wide">
+              <p className="text-white/70 text-xs text-center mt-8 font-semibold tracking-wide">
                 Typically responds within 2 business hours
               </p>
             </motion.div>

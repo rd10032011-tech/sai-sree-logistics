@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 const topics = [
   { q: 'How do I get a quote?', a: 'Visit our Contact page or call +91 98409 23192. Provide your shipment details — volume, type of goods, pickup/delivery locations — and we\'ll respond within 2 hours with a customized proposal.' },
   { q: 'What documents do I need for warehousing?', a: 'You\'ll need a signed storage agreement, goods receipt note, and GST invoice copy for incoming stock. We handle all ongoing documentation including Custodian Certificates, daily MIS reports, and bin card updates.' },
-  { q: 'Can I track my shipments in real time?', a: 'Yes. Every shipment is tracked from pickup to delivery via GPS. You can contact our operations team for live tracking updates, ETA information, or use our Track Shipment page for self-service.' },
+  { q: 'Can I track my shipments in real time?', a: 'Yes. Every shipment is tracked from pickup to delivery via GPS. You can contact our operations team for live tracking updates and ETA information at any time.' },
   { q: 'Do you provide manpower for short-term projects?', a: 'Absolutely. We offer both permanent and day-based temporary staffing. Whether you need 5 or 50 workers, we can scale within 24-48 hours. All workers are background-verified and trained.' },
   { q: 'What is your billing cycle?', a: 'We offer flexible billing — weekly, bi-weekly, or monthly — based on the service agreement. All invoices include detailed breakouts with supporting MIS reports for complete transparency.' },
   { q: 'How does FIFO work in your warehouses?', a: 'FIFO (First-In, First-Out) is strictly enforced through our ERP system. Incoming stock is logged with date and batch details. Outbound picking automatically prioritizes older stock, and bin cards are updated in real time to reflect movements.' },
@@ -41,14 +41,14 @@ export default function HelpCenter() {
             Back to Home
           </Link>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white mb-4 tracking-tight">Help Center</h1>
-          <p className="text-gray-400 text-lg mb-10 leading-relaxed">Find answers to common questions about our logistics services.</p>
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-accent mb-4 tracking-tight">Help Center</h1>
+          <p className="text-gray-500 text-lg mb-10 leading-relaxed">Find answers to common questions about our logistics services.</p>
 
-          <div className="bg-dark-2/80 backdrop-blur-sm border border-white/5 rounded-2xl p-8 sm:p-10 divide-y divide-white/5">
+          <div className="bg-dark-2/80 backdrop-blur-sm border border-gray-100/30 rounded-2xl p-8 sm:p-10 divide-y divide-white/5">
             {topics.map((item) => (
               <div key={item.q} className="py-6 first:pt-0 last:pb-0">
-                <h3 className="text-white font-semibold text-lg mb-2">{item.q}</h3>
-                <p className="text-gray-400 leading-relaxed">{item.a}</p>
+                <h3 className="text-accent font-semibold text-lg mb-2">{item.q}</h3>
+                <p className="text-gray-500 leading-relaxed">{item.a}</p>
               </div>
             ))}
           </div>

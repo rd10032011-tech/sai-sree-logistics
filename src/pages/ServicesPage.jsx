@@ -80,7 +80,7 @@ export default function ServicesPage() {
                       <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300 border border-primary/15 group-hover:border-primary">
                         <Icon size={30} />
                       </div>
-                      <div className="text-gray-300 group-hover:text-primary transition-colors translate-y-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300">
+                      <div className="text-gray-400 group-hover:text-primary transition-colors translate-y-1 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300">
                         <ArrowUpRight size={26} />
                       </div>
                     </div>

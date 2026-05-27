@@ -129,7 +129,7 @@ export default function About() {
           <div className="grid md:grid-cols-4 gap-8">
             {milestones.map((m, idx) => (
               <motion.div key={idx} variants={itemVariants} className="relative group">
-                <div className="text-5xl font-black text-gray-100 group-hover:text-primary/10 transition-colors absolute -top-8 left-0 select-none">
+                <div className="text-5xl font-black text-accent/5 group-hover:text-primary/10 transition-colors absolute -top-8 left-0 select-none">
                   {m.year}
                 </div>
                 <div className="relative pt-4">
