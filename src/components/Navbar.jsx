@@ -50,7 +50,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.05, rotate: 5 }}
               className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-primary/20"
             >
-              <img src="/src/assets/logo.png" alt="Sai Sree Logistics" className="w-full h-full object-contain" />
+              <img src="/logo.png" alt="Sai Sree Logistics" className="w-full h-full object-contain" />
             </motion.div>
             <div className="flex flex-col -space-y-1">
               <span className="font-black text-lg text-accent tracking-tight group-hover:text-primary transition-colors">

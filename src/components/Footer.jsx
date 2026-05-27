@@ -34,7 +34,7 @@ export default function Footer() {
           <div className="sm:col-span-2 lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6 group">
               <div className="w-10 h-10 rounded-xl overflow-hidden shadow-lg shadow-primary/20">
-                <img src="/src/assets/logo.png" alt="Sai Sree Logistics" className="w-full h-full object-contain" />
+                <img src="/logo.png" alt="Sai Sree Logistics" className="w-full h-full object-contain" />
               </div>
               <div className="flex flex-col -space-y-1">
                 <span className="font-black text-lg text-white group-hover:text-primary transition-colors">

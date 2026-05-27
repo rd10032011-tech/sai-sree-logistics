@@ -8,7 +8,7 @@ export default function CTA() {
       {/* Dynamic Background Gradient */}
       <div className="absolute inset-0 mx-4 sm:mx-6 lg:mx-8 my-4 rounded-[3.5rem] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-[#F97316] to-primary-dark" />
-        <div className="absolute inset-0 bg-[url('/src/assets/cta-bg.jpg')] bg-cover bg-center mix-blend-overlay opacity-25 grayscale" />
+        <div className="absolute inset-0 bg-[url('/cta-bg.jpg')] bg-cover bg-center mix-blend-overlay opacity-25 grayscale" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">

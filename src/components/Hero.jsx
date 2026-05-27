@@ -109,7 +109,7 @@ export default function Hero() {
           >
             <div className="relative w-full h-[500px] rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
-                src="/src/assets/warehouse-bg.jpg"
+                src="/warehouse-bg.jpg"
                 alt="Warehouse and logistics operations"
                 className="absolute inset-0 w-full h-full object-cover"
               />
