@@ -199,10 +199,11 @@ export default function ContactCTA() {
                   whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                 />
                 <motion.select
+                  defaultValue=""
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-300 focus:border-gold/50 focus:bg-white/10 appearance-none"
                   whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                 >
-                  <option value="" disabled selected className="bg-[#0A0E1A] text-white/30">Select Service</option>
+                  <option value="" disabled className="bg-[#0A0E1A] text-white/30">Select Service</option>
                   <option value="manpower" className="bg-[#0A0E1A]">Manpower Supply</option>
                   <option value="warehousing" className="bg-[#0A0E1A]">Warehousing</option>
                   <option value="transportation" className="bg-[#0A0E1A]">Transportation</option>
