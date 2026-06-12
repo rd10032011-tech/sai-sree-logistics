@@ -32,7 +32,7 @@ const steps = [
   },
   {
     phase: '03',
-    title: 'Verification & Vetting',
+    title: 'Screening',
     desc: 'Every candidate undergoes rigorous background verification, document authentication, police clearance, and medical fitness checks before shortlisting.',
     details: ['Police background verification', 'Document & credential audit', 'Medical fitness screening', 'Reference & employment checks'],
     icon: (

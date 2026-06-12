@@ -128,6 +128,36 @@ export default function Founder() {
           </motion.div>
         </div>
 
+        <div className="mt-20 grid gap-8 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-8"
+          >
+            <span className="mb-3 inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-gold/70">Our Vision</span>
+            <p className="text-lg leading-relaxed text-white/70">
+              To be India&apos;s most trusted workforce and logistics infrastructure partner — empowering
+              every enterprise we serve with reliable talent, seamless operations, and scalable growth.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: '-100px' }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-8"
+          >
+            <span className="mb-3 inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-gold/70">Our Mission</span>
+            <p className="text-lg leading-relaxed text-white/70">
+              To bridge India&apos;s workforce potential with enterprise demand through technology-driven
+              recruitment, compliant deployment, and continuous management — delivering operational
+              excellence at scale.
+            </p>
+          </motion.div>
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -170,6 +200,44 @@ export default function Founder() {
                 </motion.div>
               ))}
             </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20"
+        >
+          <div className="mb-10 text-center">
+            <span className="mb-3 inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-gold/70">
+              Road Ahead
+            </span>
+            <h3 className="text-2xl font-bold sm:text-3xl">
+              Future <span className="text-gradient-gold">Roadmap</span>
+            </h3>
+          </div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { year: '2025', title: 'Tech-Enabled HRMS', desc: 'Full digitisation of workforce onboarding, attendance, payroll, and compliance via proprietary HRMS platform.' },
+              { year: '2026', title: 'Pan-India Expansion', desc: 'Extend operations to 50+ cities with regional hubs in Delhi NCR, Mumbai, Bangalore, and Hyderabad.' },
+              { year: '2027', title: 'Automation & AI', desc: 'AI-driven workforce planning, predictive attrition modelling, and automated compliance monitoring across all deployments.' },
+              { year: '2028', title: '1,00,000 Workforce', desc: 'Scale to 1,00,000 active deployments serving 5,000+ enterprise clients across India and select international markets.' },
+            ].map((item, i) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="group rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-6 transition-all duration-500 hover:border-gold/[0.15] hover:shadow-glow"
+              >
+                <span className="mb-1 inline-block rounded-full bg-gold/10 px-3 py-0.5 text-[11px] font-bold text-gold">{item.year}</span>
+                <h4 className="mb-2 mt-2 text-base font-bold text-white">{item.title}</h4>
+                <p className="text-sm leading-relaxed text-white/40">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
 

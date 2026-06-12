@@ -9,9 +9,9 @@ const footerLinks = {
   Services: [
     { label: 'Manpower Supply Chennai', href: '/manpower-supply-chennai' },
     { label: 'Contract Labour Services', href: '/contract-labour-services' },
-    { label: 'Warehouse Staffing', href: '/warehouse-staffing' },
-    { label: 'Industrial Manpower', href: '/industrial-manpower' },
-    { label: 'Integrated 3PL Solutions', href: '/3pl-services' },
+    { label: 'Warehouse Staffing Chennai', href: '/warehouse-staffing-chennai' },
+    { label: 'Industrial Manpower Services', href: '/industrial-manpower-services' },
+    { label: '3PL Services Chennai', href: '/3pl-services-chennai' },
     { label: 'Warehousing Services', href: '/warehousing-services' },
     { label: 'Transportation Services', href: '/transportation-services' },
   ],
@@ -24,7 +24,7 @@ const footerLinks = {
   Process: [
     { label: 'Requirement Analysis', target: '#process' },
     { label: 'Recruitment & Sourcing', target: '#process' },
-    { label: 'Verification & Vetting', target: '#process' },
+    { label: 'Screening', target: '#process' },
     { label: 'Deployment & Onboarding', target: '#process' },
     { label: 'Ongoing Management', target: '#process' },
   ],

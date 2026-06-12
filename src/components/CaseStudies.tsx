@@ -16,6 +16,7 @@ const allCaseStudies = [
     industry: 'Automotive Manufacturing',
     challenge: 'Scale workforce from 200 to 2,500 across 4 plants in 90 days with full statutory compliance.',
     solution: 'End-to-end recruitment, PF/ESI payroll management, on-site HR coordinators, and 24hr replacement pipeline for 15+ job roles.',
+    deployment: 'On-site HR coordinators deployed at each plant with biometric attendance, PF/ESI registration completed within 48 hours of joining, and 24-hour replacement guarantee activated across 15+ job roles.',
     results: ['2,500+ deployed in 87 days', '99.2% attendance rate', 'Zero compliance gap in 3 audits', '45% cost savings vs vendor model'],
     tag: 'Manpower Supply',
   },
@@ -26,6 +27,7 @@ const allCaseStudies = [
     industry: 'E-Commerce / Fulfillment',
     challenge: 'Handle 5x order volume during festive season across 3 fulfillment centers without SLA breaches.',
     solution: 'Integrated 3PL: temporary manpower surge (800+ staff), additional warehousing capacity (150k sq ft), and dedicated last-mile fleet.',
+    deployment: '800+ temporary staff onboarded across 3 fulfillment centers with same-day orientation, additional 150k sq ft warehouse activated, and last-mile fleet deployed with GPS tracking.',
     results: ['99.7% on-time dispatch', '3.2M units fulfilled', 'Zero SLA breach', 'Repeat engagement for 3 seasons'],
     tag: 'Integrated 3PL',
   },
@@ -36,6 +38,7 @@ const allCaseStudies = [
     industry: 'FMCG / Consumer Goods',
     challenge: 'Fragmented logistics across 6 vendors causing 15% shrinkage and delayed distribution to 2,000+ retail touchpoints.',
     solution: 'Single-point 3PL consolidation: warehouse management, fleet routing optimization, and WMS-integrated inventory tracking.',
+    deployment: 'Consolidated 6 vendors into single-point 3PL operation with WMS integration, fleet routing overhaul completed in 60 days, and 2,000+ retail touchpoints mapped.',
     results: ['Shrinkage reduced to under 2%', 'Distribution coverage expanded 40%', '15% reduction in logistics cost', 'Real-time visibility via dashboard'],
     tag: 'Warehousing & Transportation',
   },
@@ -46,6 +49,7 @@ const allCaseStudies = [
     industry: 'Pharmaceuticals',
     challenge: 'Temperature-controlled storage and distribution for 500+ SKUs across 15 states with strict regulatory compliance.',
     solution: 'Cold chain warehousing (2-8°C), temperature-monitored fleet, batch-wise traceability, and WHOGDP-compliant documentation.',
+    deployment: 'Cold chain warehouses (2-8°C) operationalized across 15 states, temperature-monitored fleet deployed, batch-wise traceability system implemented.',
     results: ['Zero temperature excursion', '100% batch traceability', 'Regulatory audit pass rate', '30% faster distribution cycles'],
     tag: 'Integrated 3PL',
   },
@@ -56,6 +60,7 @@ const allCaseStudies = [
     industry: 'Retail',
     challenge: 'Legacy warehouse operations causing 12% inventory inaccuracy and 4-hour average truck turnaround time.',
     solution: 'WMS implementation, pick-and-pack process re-engineering, workforce training, and barcode-based inventory tracking.',
+    deployment: 'WMS deployed across all warehouses, pick-and-pack process re-engineered with barcode tracking, workforce trained on new systems in 30 days.',
     results: ['99.8% inventory accuracy', 'Truck turnaround reduced to 45 min', '3x throughput increase', 'Real-time stock visibility'],
     tag: 'Warehousing & Transportation',
   },
@@ -66,6 +71,7 @@ const allCaseStudies = [
     industry: 'Construction / Infrastructure',
     challenge: 'Mobilize 1,200+ construction workers to a remote project site within 45 days with accommodation and welfare compliance.',
     solution: 'Bulk recruitment in Tamil Nadu & Andhra Pradesh, camp accommodation setup, statutory welfare compliance, and weekly payroll.',
+    deployment: '1,200+ workers mobilized from Tamil Nadu & Andhra Pradesh, camp accommodation set up with welfare amenities, statutory compliance completed before deployment.',
     results: ['1,200+ mobilized in 40 days', '100% statutory compliance', '95% workforce retention', '0 safety incidents in 6 months'],
     tag: 'Manpower Supply',
   },
@@ -114,18 +120,24 @@ function AnimatedMetricResults({ results }: { results: string[] }) {
   );
 }
 
+function PhaseRow({ label, text, color }: { label: string; text: string; color: string }) {
+  return (
+    <div className="rounded-lg border border-white/[0.04] bg-white/[0.02] px-4 py-3">
+      <span className={`mb-0.5 block text-[10px] font-semibold uppercase tracking-[0.15em] ${color}`}>
+        {label}
+      </span>
+      <p className="text-sm leading-relaxed text-white/50">{text}</p>
+    </div>
+  );
+}
+
 export default function CaseStudies() {
   const [activeTag, setActiveTag] = useState('All');
-  const [expandedId, setExpandedId] = useState<string | null>(null);
   const { scrollTo } = useLenisScroll();
 
   const filtered = activeTag === 'All'
     ? allCaseStudies
     : allCaseStudies.filter((s) => s.tag === activeTag);
-
-  const toggleExpand = (id: string) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
 
   return (
     <section id="case-studies" className="relative py-24 sm:py-32 overflow-hidden">
@@ -154,7 +166,7 @@ export default function CaseStudies() {
           {tags.map((tag) => (
             <motion.button
               key={tag}
-              onClick={() => { setActiveTag(tag); setExpandedId(null); }}
+              onClick={() => setActiveTag(tag)}
               className={`rounded-full px-5 py-2 text-xs font-semibold uppercase tracking-[0.1em] transition-all duration-300 ${
                 activeTag === tag
                   ? 'bg-gold text-background shadow-gold'
@@ -168,7 +180,7 @@ export default function CaseStudies() {
           ))}
         </div>
 
-        <motion.div layout className="grid gap-6 lg:grid-cols-3">
+        <motion.div layout className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((study) => (
               <motion.article
@@ -178,61 +190,38 @@ export default function CaseStudies() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className={`group relative flex flex-col rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] transition-all duration-500 hover:border-gold/[0.15] hover:shadow-glow ${
-                  expandedId === study.id ? 'lg:col-span-3' : ''
-                }`}
+                className="group relative flex flex-col rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-6 sm:p-8 transition-all duration-500 hover:border-gold/[0.15] hover:shadow-glow"
               >
-                <button
-                  onClick={() => toggleExpand(study.id)}
-                  className="relative z-10 flex flex-col h-full text-left p-6 sm:p-8"
-                >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/[0.02] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-gold/[0.02] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                  <div className="relative z-10 flex flex-col h-full">
-                    <div className="mb-3 flex items-center gap-2">
+                <div className="relative z-10 flex flex-col gap-4">
+                  <div>
+                    <div className="mb-1 flex items-center gap-2">
                       <span className="inline-block rounded-full bg-gold/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.1em] text-gold">
                         {study.tag}
                       </span>
                     </div>
-
-                    <h3 className="mb-1 text-base font-bold leading-snug text-white sm:text-lg">
+                    <h3 className="text-base font-bold leading-snug text-white sm:text-lg">
                       {study.title}
                     </h3>
-                    <p className="mb-3 text-xs text-white/30">
+                    <p className="text-xs text-white/30">
                       {study.client} &middot; {study.industry}
                     </p>
-
-                    <p className="mb-2 text-sm text-white/50">
-                      <span className="font-semibold text-white/70">Challenge:</span> {study.challenge}
-                    </p>
-
-                    <AnimatePresence>
-                      {expandedId === study.id && (
-                        <motion.div
-                          initial={{ height: 0, opacity: 0 }}
-                          animate={{ height: 'auto', opacity: 1 }}
-                          exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                          className="overflow-hidden"
-                        >
-                          <p className="mb-4 text-sm text-white/40">
-                            <span className="font-semibold text-white/60">Solution:</span> {study.solution}
-                          </p>
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-
-                    <div className="mt-auto">
-                      <AnimatedMetricResults results={study.results} />
-                    </div>
-
-                    {expandedId !== study.id && (
-                      <span className="mt-3 text-xs font-semibold text-gold/60 group-hover:text-gold transition-colors">
-                        Click to expand →
-                      </span>
-                    )}
                   </div>
-                </button>
+
+                  <div className="flex flex-col gap-3">
+                    <PhaseRow label="Challenge" text={study.challenge} color="text-gold" />
+                    <PhaseRow label="Solution" text={study.solution} color="text-crimson" />
+                    <PhaseRow label="Deployment" text={study.deployment} color="text-gold" />
+                  </div>
+
+                  <div>
+                    <span className="mb-2 block text-[10px] font-semibold uppercase tracking-[0.15em] text-white/30">
+                      Results
+                    </span>
+                    <AnimatedMetricResults results={study.results} />
+                  </div>
+                </div>
               </motion.article>
             ))}
           </AnimatePresence>
