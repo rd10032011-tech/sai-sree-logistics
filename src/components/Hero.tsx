@@ -69,7 +69,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background pt-24 sm:pt-28"
     >
       <div
         className="absolute inset-0 pointer-events-none"
@@ -103,41 +103,41 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="text-center"
         >
-          <div className="mb-8">
-            <span className="inline-block border border-white/10 bg-white/[0.03] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/40">
+          <div className="mb-5">
+            <span className="text-[11px] font-semibold uppercase tracking-[0.28em] text-white/30">
               India&apos;s Workforce &amp; 3PL Infrastructure Partner
             </span>
           </div>
 
           <h1
             ref={titleRef}
-            className="mb-8 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+            className="mb-4 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
           >
             Powering India&apos;s <br />
             <span className="text-gradient-gold">Workforce</span>
           </h1>
 
-          <div className="mx-auto mb-8 h-px w-32 bg-gold/50" />
+          <div className="mx-auto mb-5 h-px w-24 bg-gold/60" />
 
           <p
             ref={subtitleRef}
-            className="mx-auto mb-14 max-w-3xl text-base leading-relaxed text-white/40 sm:text-lg"
+            className="mx-auto mb-10 max-w-3xl text-base leading-relaxed text-white/40 sm:text-lg"
           >
             End-to-end manpower supply, warehousing, transportation, and integrated 3PL operations at scale.
           </p>
 
           <div
             ref={metricsRef}
-            className="mb-14 flex flex-wrap items-center justify-center gap-x-0 gap-y-6"
+            className="mb-10 flex flex-wrap items-center justify-center gap-x-0 gap-y-4"
           >
             {metrics.map((m, i) => (
               <div key={m.label} className="metric-item flex items-center">
-                <div className="px-6 sm:px-10 text-center">
+                <div className="px-5 sm:px-8 text-center">
                   <span className="block text-2xl font-bold text-gold sm:text-3xl lg:text-4xl">{m.value}</span>
                   <span className="text-xs text-white/30 sm:text-sm">{m.label}</span>
                 </div>
                 {i < metrics.length - 1 && (
-                  <span className="hidden h-10 w-px bg-white/10 sm:block" />
+                  <span className="hidden h-8 w-px bg-white/10 sm:block" />
                 )}
               </div>
             ))}
@@ -172,7 +172,7 @@ export default function Hero() {
 
         <div
           ref={serviceBarRef}
-          className="mt-16 flex flex-wrap items-center justify-center gap-8 sm:gap-12"
+          className="mt-12 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
         >
           {[
             { label: 'Manpower Supply', target: '#services' },
