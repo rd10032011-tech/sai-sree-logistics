@@ -1,233 +1,192 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect, useRef, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import gsap from 'gsap';
-import ThreeBackground from './ThreeBackground';
 import { useLenisScroll } from '@/lib/lenis-context';
 
-const taglines = [
-  'India\'s Workforce & 3PL Infrastructure Partner',
-  'Powering India\'s Workforce. Delivering End-to-End 3PL Excellence.',
-  'Building the Backbone of Indian Industry.',
-];
-
-const services = [
-  { label: 'Manpower Supply', target: '#services' },
-  { label: 'Warehousing', target: '#services' },
-  { label: 'Transportation', target: '#services' },
-  { label: '3PL Solutions', target: '#services' },
+const metrics = [
+  { value: '5,000+', label: 'Workers Deployed' },
+  { value: '500+', label: 'Enterprise Clients' },
+  { value: '20+', label: 'Cities' },
+  { value: '15+', label: 'Years of Excellence' },
 ];
 
 export default function Hero() {
-  const [taglineIndex, setTaglineIndex] = useState(0);
+  const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
-  const progressRef = useRef<HTMLDivElement>(null);
-  const exploreBtnRef = useRef<HTMLAnchorElement>(null);
-  const contactBtnRef = useRef<HTMLAnchorElement>(null);
+  const subtitleRef = useRef<HTMLParagraphElement>(null);
+  const metricsRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
+  const serviceBarRef = useRef<HTMLDivElement>(null);
   const { scrollTo } = useLenisScroll();
-  const readyRef = useRef(false);
-
-  useEffect(() => {
-    readyRef.current = true;
-    const interval = setInterval(() => {
-      setTaglineIndex((prev) => (prev + 1) % taglines.length);
-    }, 3500);
-    return () => clearInterval(interval);
-  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
       if (titleRef.current) {
-        const chars = titleRef.current.querySelectorAll('.char');
         gsap.fromTo(
-          chars,
-          { y: 100, opacity: 0, rotateX: -30 },
-          {
-            y: 0,
-            opacity: 1,
-            rotateX: 0,
-            duration: 1.2,
-            stagger: 0.03,
-            ease: 'power4.out',
-            delay: 0.3,
-          }
+          titleRef.current,
+          { y: 80, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1.4, ease: 'power3.out', delay: 0.4 }
         );
       }
-
-      if (progressRef.current) {
+      if (subtitleRef.current) {
         gsap.fromTo(
-          progressRef.current,
-          { scaleX: 0 },
-          { scaleX: 1, duration: 2.5, ease: 'power2.out', delay: 1.5 }
+          subtitleRef.current,
+          { y: 30, opacity: 0 },
+          { y: 0, opacity: 1, duration: 1, ease: 'power2.out', delay: 0.9 }
+        );
+      }
+      if (metricsRef.current) {
+        const items = metricsRef.current.querySelectorAll('.metric-item');
+        gsap.fromTo(
+          items,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, stagger: 0.08, ease: 'power2.out', delay: 1.3 }
+        );
+      }
+      if (ctaRef.current) {
+        gsap.fromTo(
+          ctaRef.current,
+          { y: 20, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 1.6 }
+        );
+      }
+      if (serviceBarRef.current) {
+        gsap.fromTo(
+          serviceBarRef.current,
+          { y: 15, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', delay: 1.9 }
         );
       }
     });
-
     return () => ctx.revert();
-    }, []);
+  }, []);
 
-  const handleExploreServices = useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    const btn = exploreBtnRef.current;
-    if (!btn) return;
-    gsap.timeline({ onComplete: () => scrollTo('#services') })
-      .to(btn, { scale: 0.93, duration: 0.08, ease: 'power2.in' })
-      .to(btn, { scale: 1.07, duration: 0.15, ease: 'power2.out' })
-      .to(btn, { scale: 1, duration: 0.1, ease: 'power2.out' });
+  const handleScroll = useCallback((target: string) => {
+    scrollTo(target);
   }, [scrollTo]);
-
-  const handleContactClick = useCallback((e: React.MouseEvent) => {
-    e.preventDefault();
-    const btn = contactBtnRef.current;
-    if (!btn) return;
-    gsap.timeline({ onComplete: () => scrollTo('#contact') })
-      .to(btn, { scale: 0.93, duration: 0.08, ease: 'power2.in' })
-      .to(btn, { scale: 1.06, duration: 0.15, ease: 'power2.out' })
-      .to(btn, { scale: 1, duration: 0.1, ease: 'power2.out' });
-  }, [scrollTo]);
-
-  const title = 'Sai Sree Logistics';
 
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen items-center justify-center overflow-hidden"
+      ref={sectionRef}
+      className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background"
     >
-      <ThreeBackground />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage:
+            'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
+          backgroundSize: '80px 80px',
+        }}
+      />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-[#050816]/20 via-[#050816]/60 to-[#050816] pointer-events-none" />
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(135deg, transparent 45%, rgba(245,163,0,0.02) 50%, transparent 55%)',
+        }}
+      />
 
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-gradient-radial from-gold/[0.03] via-crimson/[0.01] to-transparent blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 text-center lg:px-8 w-full">
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent pointer-events-none" />
+
+      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
+          className="text-center"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
-            className="mb-6"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-gold/20 bg-gold/[0.04] px-5 py-2 text-xs font-medium uppercase tracking-[0.25em] text-gold/90">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              Enterprise Logistics &amp; Workforce Solutions
+          <div className="mb-8">
+            <span className="inline-block border border-white/10 bg-white/[0.03] px-5 py-2 text-[11px] font-semibold uppercase tracking-[0.25em] text-white/40">
+              India&apos;s Workforce &amp; 3PL Infrastructure Partner
             </span>
-          </motion.div>
+          </div>
 
           <h1
             ref={titleRef}
-            className="mb-4 overflow-hidden text-5xl font-bold leading-none tracking-tight sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
-            style={{ perspective: '800px' }}
+            className="mb-6 text-5xl font-bold leading-none tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
           >
-            {title.split('').map((char, i) => (
-              <span
-                key={i}
-                className="char inline-block"
-                style={{ opacity: 0 }}
-              >
-                {char === ' ' ? '\u00A0' : char}
-              </span>
-            ))}
+            Powering India&apos;s <br />
+            <span className="text-gradient-gold">Workforce</span>
           </h1>
 
-          <div className="mb-10 h-12 sm:h-14 flex items-center justify-center overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={taglineIndex}
-                initial={{ opacity: 0, y: 30, filter: 'blur(4px)' }}
-                animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                exit={{ opacity: 0, y: -30, filter: 'blur(4px)' }}
-                transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="text-base sm:text-lg md:text-xl text-white/60 max-w-3xl mx-auto leading-relaxed"
-              >
-                {taglines[taglineIndex]}
-              </motion.p>
-            </AnimatePresence>
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex flex-wrap items-center justify-center gap-3 sm:gap-4"
+          <p
+            ref={subtitleRef}
+            className="mx-auto mb-12 max-w-3xl text-base leading-relaxed text-white/40 sm:text-lg"
           >
-            <motion.a
-              ref={exploreBtnRef}
-              href="#services"
-              onClick={handleExploreServices}
-              className="group relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gold px-8 py-3.5 text-sm font-semibold text-background"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              <span className="relative z-10">Explore Services</span>
-              <svg className="relative z-10 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-              <div className="absolute inset-0 -translate-x-full bg-white/20 transition-transform duration-300 group-hover:translate-x-0" />
-            </motion.a>
-            <motion.a
-              ref={contactBtnRef}
-              href="#contact"
-              onClick={handleContactClick}
-              className="inline-flex items-center gap-2.5 rounded-full border border-white/15 px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-gold/50 hover:text-gold hover:bg-gold/[0.04]"
-              whileHover={{ scale: 1.04 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              Contact Us
-              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h8m0 0l-4-4m4 4l-4 4" />
-              </svg>
-            </motion.a>
-          </motion.div>
-        </motion.div>
+            End-to-end manpower supply, warehousing, transportation, and integrated 3PL solutions
+            — deploying thousands of skilled professionals across 20+ cities every day.
+          </p>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16"
-        >
-          <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
-            {services.map((service) => (
-              <button
-                key={service.label}
-                onClick={() => scrollTo(service.target)}
-                className="group flex items-center gap-2 text-xs sm:text-sm text-white/30 hover:text-gold transition-colors duration-300"
-              >
-                <span className="h-1 w-1 rounded-full bg-gold/50 group-hover:bg-gold transition-colors duration-300" />
-                {service.label}
-              </button>
+          <div
+            ref={metricsRef}
+            className="mb-12 flex flex-wrap justify-center gap-x-12 gap-y-6"
+          >
+            {metrics.map((m) => (
+              <div key={m.label} className="metric-item text-center">
+                <span className="block text-2xl font-bold text-gold sm:text-3xl">{m.value}</span>
+                <span className="text-xs text-white/30 sm:text-sm">{m.label}</span>
+              </div>
             ))}
           </div>
+
+          <div ref={ctaRef}>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              <motion.a
+                href="#services"
+                onClick={(e) => { e.preventDefault(); handleScroll('#services'); }}
+                className="inline-flex items-center gap-2.5 bg-gold px-8 py-3.5 text-sm font-semibold text-background transition-all duration-300 hover:brightness-110 hover:shadow-gold"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Explore Services
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </motion.a>
+              <motion.a
+                href="#contact"
+                onClick={(e) => { e.preventDefault(); handleScroll('#contact'); }}
+                className="inline-flex items-center gap-2.5 border border-white/15 px-8 py-3.5 text-sm font-semibold text-white transition-all duration-300 hover:border-gold/50 hover:text-gold hover:bg-gold/[0.04]"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Contact Us
+              </motion.a>
+            </div>
+          </div>
         </motion.div>
+
+        <div
+          ref={serviceBarRef}
+          className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+        >
+          {[
+            { label: 'Manpower Supply', target: '#services' },
+            { label: 'Warehousing', target: '#services' },
+            { label: 'Transportation', target: '#services' },
+            { label: '3PL Solutions', target: '#services' },
+          ].map((s) => (
+            <button
+              key={s.label}
+              onClick={() => handleScroll(s.target)}
+              className="group flex items-center gap-2 text-xs text-white/20 transition-colors duration-300 hover:text-gold sm:text-sm"
+            >
+              <span className="h-px w-4 bg-gold/50 group-hover:bg-gold transition-colors duration-300" />
+              {s.label}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div
-        ref={progressRef}
-        className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-gradient-primary scale-x-0"
-      />
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 3, duration: 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
-          className="flex flex-col items-center gap-2"
-        >
-          <span className="text-[10px] uppercase tracking-[0.3em] text-white/20">Scroll</span>
-          <svg className="h-4 w-4 text-white/20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
-        </motion.div>
-      </motion.div>
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-white/10">Scroll</span>
+      </div>
     </section>
   );
 }
