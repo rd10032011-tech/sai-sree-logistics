@@ -13,7 +13,6 @@ const metrics = [
 ];
 
 export default function Hero() {
-  const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const metricsRef = useRef<HTMLDivElement>(null);
@@ -70,15 +69,17 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      ref={sectionRef}
       className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background"
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)',
-          backgroundSize: '80px 80px',
+          background: `
+            radial-gradient(ellipse 70% 30% at 50% 0%, rgba(245,163,0,0.05) 0%, transparent 100%),
+            radial-gradient(ellipse 50% 50% at 25% 30%, rgba(245,163,0,0.02) 0%, transparent 100%),
+            radial-gradient(ellipse 50% 50% at 75% 30%, rgba(179,27,27,0.015) 0%, transparent 100%),
+            linear-gradient(180deg, transparent 50%, #050816 100%)
+          `,
         }}
       />
 
@@ -86,13 +87,14 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(135deg, transparent 45%, rgba(245,163,0,0.02) 50%, transparent 55%)',
+            'repeating-linear-gradient(90deg, transparent 0%, transparent 8%, rgba(245,163,0,0.015) 8.5%, transparent 9%, transparent 100%)',
+          backgroundSize: '100% 100%',
         }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-gold/60 to-transparent pointer-events-none" />
 
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/20 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <motion.div
@@ -109,28 +111,34 @@ export default function Hero() {
 
           <h1
             ref={titleRef}
-            className="mb-6 text-5xl font-bold leading-none tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
+            className="mb-8 text-5xl font-bold leading-tight tracking-tight text-white sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl"
           >
             Powering India&apos;s <br />
             <span className="text-gradient-gold">Workforce</span>
           </h1>
 
+          <div className="mx-auto mb-8 h-px w-32 bg-gold/50" />
+
           <p
             ref={subtitleRef}
-            className="mx-auto mb-12 max-w-3xl text-base leading-relaxed text-white/40 sm:text-lg"
+            className="mx-auto mb-14 max-w-3xl text-base leading-relaxed text-white/40 sm:text-lg"
           >
-            End-to-end manpower supply, warehousing, transportation, and integrated 3PL solutions
-            — deploying thousands of skilled professionals across 20+ cities every day.
+            End-to-end manpower supply, warehousing, transportation, and integrated 3PL operations at scale.
           </p>
 
           <div
             ref={metricsRef}
-            className="mb-12 flex flex-wrap justify-center gap-x-12 gap-y-6"
+            className="mb-14 flex flex-wrap items-center justify-center gap-x-0 gap-y-6"
           >
-            {metrics.map((m) => (
-              <div key={m.label} className="metric-item text-center">
-                <span className="block text-2xl font-bold text-gold sm:text-3xl">{m.value}</span>
-                <span className="text-xs text-white/30 sm:text-sm">{m.label}</span>
+            {metrics.map((m, i) => (
+              <div key={m.label} className="metric-item flex items-center">
+                <div className="px-6 sm:px-10 text-center">
+                  <span className="block text-2xl font-bold text-gold sm:text-3xl lg:text-4xl">{m.value}</span>
+                  <span className="text-xs text-white/30 sm:text-sm">{m.label}</span>
+                </div>
+                {i < metrics.length - 1 && (
+                  <span className="hidden h-10 w-px bg-white/10 sm:block" />
+                )}
               </div>
             ))}
           </div>
@@ -164,7 +172,7 @@ export default function Hero() {
 
         <div
           ref={serviceBarRef}
-          className="mt-16 flex flex-wrap items-center justify-center gap-6 sm:gap-10"
+          className="mt-16 flex flex-wrap items-center justify-center gap-8 sm:gap-12"
         >
           {[
             { label: 'Manpower Supply', target: '#services' },
@@ -175,9 +183,9 @@ export default function Hero() {
             <button
               key={s.label}
               onClick={() => handleScroll(s.target)}
-              className="group flex items-center gap-2 text-xs text-white/20 transition-colors duration-300 hover:text-gold sm:text-sm"
+              className="group flex items-center gap-3 text-xs text-white/20 transition-colors duration-300 hover:text-gold sm:text-sm"
             >
-              <span className="h-px w-4 bg-gold/50 group-hover:bg-gold transition-colors duration-300" />
+              <span className="h-px w-5 bg-gold/40 transition-colors duration-300 group-hover:bg-gold" />
               {s.label}
             </button>
           ))}
