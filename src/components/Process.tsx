@@ -10,9 +10,9 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     phase: '01',
-    title: 'Discovery & Assessment',
-    desc: 'We analyse your workforce needs, operational scale, and compliance requirements through an on-site audit and stakeholder consultation.',
-    details: ['Site audit & gap analysis', 'Skill matrix mapping', 'Compliance requirement review', 'SLAs & KPIs definition'],
+    title: 'Requirement Analysis',
+    desc: 'We conduct an on-site audit and stakeholder consultation to map your workforce needs, shift patterns, skill requirements, and compliance obligations.',
+    details: ['On-site workforce audit', 'Skill & role requirement mapping', 'Shift & volume planning', 'Compliance & SLA definition'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
@@ -21,20 +21,31 @@ const steps = [
   },
   {
     phase: '02',
-    title: 'Sourcing & Vetting',
-    desc: 'We tap into our 50,000+ candidate database, conduct rigorous background checks, skill assessments, and document verification.',
-    details: ['Multi-channel candidate sourcing', 'Background & police verification', 'Skill & psychometric tests', 'Document & credential audit'],
+    title: 'Recruitment & Sourcing',
+    desc: 'We activate multi-channel sourcing — internal database, job platforms, and community networks — to identify pre-vetted candidates matching your specifications.',
+    details: ['50,000+ candidate database', 'Multi-channel job posting', 'Pre-screening interviews', 'Skill & aptitude assessment'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
       </svg>
     ),
   },
   {
     phase: '03',
+    title: 'Verification & Vetting',
+    desc: 'Every candidate undergoes rigorous background verification, document authentication, police clearance, and medical fitness checks before shortlisting.',
+    details: ['Police background verification', 'Document & credential audit', 'Medical fitness screening', 'Reference & employment checks'],
+    icon: (
+      <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+      </svg>
+    ),
+  },
+  {
+    phase: '04',
     title: 'Deployment & Onboarding',
-    desc: 'Selected candidates are deployed with full induction, site-specific safety training, and HRMS-integrated attendance setup.',
-    details: ['Site induction & safety training', 'HRMS/biometric enrollment', 'Uniform & PPE issuance', 'PF/ESI registration activation'],
+    desc: 'Selected candidates are deployed with site induction, safety training, biometric registration, and PF/ESI enrollment — ready from day one.',
+    details: ['Site induction & safety training', 'HRMS & biometric enrollment', 'Uniform & PPE issuance', 'PF/ESI registration activation'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
@@ -42,10 +53,10 @@ const steps = [
     ),
   },
   {
-    phase: '04',
+    phase: '05',
     title: 'Ongoing Management',
-    desc: 'Dedicated on-site HR coordinator, 24/7 replacement guarantee, monthly MIS reports, and quarterly business reviews.',
-    details: ['On-site HR coordinator', '24hr replacement guarantee', 'Monthly MIS & attendance reports', 'Quarterly business reviews'],
+    desc: 'Dedicated on-site coordinator manages daily operations — attendance, payroll, compliance — backed by 24-hour replacement guarantee and monthly reviews.',
+    details: ['On-site HR coordinator', '24hr replacement guarantee', 'Monthly MIS & compliance reports', 'Quarterly performance reviews'],
     icon: (
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
         <path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
@@ -67,7 +78,7 @@ export default function Process() {
         { scaleY: 0 },
         {
           scaleY: 1,
-          duration: 1.2,
+          duration: 1.5,
           ease: 'power3.inOut',
           scrollTrigger: {
             trigger: lineRef.current,
@@ -101,7 +112,7 @@ export default function Process() {
             <span className="text-gradient-gold">Process</span>
           </h2>
           <p className="mx-auto max-w-2xl text-sm sm:text-base text-white/40 leading-relaxed">
-            A proven 4-phase methodology that ensures quality, compliance, and continuity at every step.
+            A proven 5-phase methodology — from requirement analysis to ongoing management — ensuring quality, compliance, and continuity at every step.
           </p>
         </motion.div>
 
@@ -124,20 +135,11 @@ export default function Process() {
                 }`}
               >
                 <div className="hidden lg:flex lg:w-1/2 lg:items-start lg:justify-center lg:pt-2">
-                  {i % 2 === 0 && (
-                    <div className="text-right">
-                      <span className="text-[64px] font-bold leading-none text-gold/10 select-none">
-                        {step.phase}
-                      </span>
-                    </div>
-                  )}
-                  {i % 2 !== 0 && (
-                    <div className="flex flex-col items-start">
-                      <span className="text-[64px] font-bold leading-none text-gold/10 select-none">
-                        {step.phase}
-                      </span>
-                    </div>
-                  )}
+                  <div className={`${i % 2 === 0 ? 'text-right' : 'text-left'}`}>
+                    <span className="text-[64px] font-bold leading-none text-gold/10 select-none">
+                      {step.phase}
+                    </span>
+                  </div>
                 </div>
 
                 <div className="relative flex shrink-0 items-start justify-center lg:absolute lg:left-1/2 lg:-translate-x-1/2">

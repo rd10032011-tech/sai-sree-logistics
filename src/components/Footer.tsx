@@ -2,26 +2,31 @@
 
 import { motion } from 'framer-motion';
 import { useLenisScroll } from '@/lib/lenis-context';
+import Link from 'next/link';
 import Logo from './Logo';
 
 const footerLinks = {
   Services: [
-    { label: 'Manpower Supply', target: '#services' },
-    { label: 'Warehousing', target: '#services' },
-    { label: 'Transportation', target: '#services' },
-    { label: '3PL Solutions', target: '#services' },
+    { label: 'Manpower Supply Chennai', href: '/manpower-supply-chennai' },
+    { label: 'Contract Labour Services', href: '/contract-labour-services' },
+    { label: 'Warehouse Staffing', href: '/warehouse-staffing' },
+    { label: 'Industrial Manpower', href: '/industrial-manpower' },
+    { label: 'Integrated 3PL Solutions', href: '/3pl-services' },
+    { label: 'Warehousing Services', href: '/warehousing-services' },
+    { label: 'Transportation Services', href: '/transportation-services' },
   ],
   Company: [
     { label: 'About Us', target: '#founder' },
-    { label: 'Our Team', target: '#founder' },
+    { label: 'Case Studies', target: '#case-studies' },
     { label: 'Careers', target: '#' },
     { label: 'Contact', target: '#contact' },
   ],
-  Support: [
-    { label: 'Help Center', target: '#' },
-    { label: 'Privacy Policy', target: '#' },
-    { label: 'Terms of Service', target: '#' },
-    { label: 'FAQ', target: '#' },
+  Process: [
+    { label: 'Requirement Analysis', target: '#process' },
+    { label: 'Recruitment & Sourcing', target: '#process' },
+    { label: 'Verification & Vetting', target: '#process' },
+    { label: 'Deployment & Onboarding', target: '#process' },
+    { label: 'Ongoing Management', target: '#process' },
   ],
 };
 
@@ -62,14 +67,23 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {links.map((link) => (
                   <li key={link.label}>
-                    <motion.button
-                      onClick={() => handleClick(link.target)}
-                      className="text-sm text-white/40 transition-colors hover:text-gold"
-                      whileHover={{ x: 4 }}
-                      whileTap={{ scale: 0.97 }}
-                    >
-                      {link.label}
-                    </motion.button>
+                    {'target' in link ? (
+                      <motion.button
+                        onClick={() => handleClick(link.target!)}
+                        className="text-sm text-white/40 transition-colors hover:text-gold"
+                        whileHover={{ x: 4 }}
+                        whileTap={{ scale: 0.97 }}
+                      >
+                        {link.label}
+                      </motion.button>
+                    ) : (
+                      <Link
+                        href={(link as { label: string; href: string }).href}
+                        className="text-sm text-white/40 transition-colors hover:text-gold"
+                      >
+                        {(link as { label: string; href: string }).label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -8,6 +8,8 @@ import Logo from './Logo';
 const navLinks = [
   { label: 'Home', target: '#hero' },
   { label: 'Services', target: '#services' },
+  { label: 'Process', target: '#process' },
+  { label: 'Case Studies', target: '#case-studies' },
   { label: 'Industries', target: '#industries' },
   { label: 'About', target: '#founder' },
   { label: 'Contact', target: '#contact' },
