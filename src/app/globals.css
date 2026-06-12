@@ -7,6 +7,8 @@
   --color-burgundy: #5B0000;
   --color-white: #F8F9FA;
   --font-sans: var(--font-inter), system-ui, sans-serif;
+  --color-surface: #0A0E1A;
+  --color-surface-light: #111627;
 }
 
 @layer base {
@@ -81,12 +83,22 @@
     -webkit-backdrop-filter: blur(20px);
   }
 
+  .bg-glass-strong {
+    background: rgba(5, 8, 22, 0.92);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
   .border-glow {
     border-color: rgba(245, 163, 0, 0.3);
   }
 
   .shadow-glow {
     box-shadow: 0 0 30px rgba(245, 163, 0, 0.15);
+  }
+
+  .shadow-glow-strong {
+    box-shadow: 0 0 50px rgba(245, 163, 0, 0.25);
   }
 
   .shadow-gold {
@@ -107,5 +119,29 @@
 
   .bg-gradient-radial {
     background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  .animate-text-reveal {
+    animation: textReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes textReveal {
+    from {
+      opacity: 0;
+      transform: translateY(40px) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
 }
