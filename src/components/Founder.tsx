@@ -3,9 +3,20 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+const milestones = [
+  { year: '2008', label: 'Founded in Chennai', desc: 'Began operations with a single client and 15 workers, focusing on industrial manpower supply.' },
+  { year: '2012', label: 'Warehousing Launch', desc: 'Expanded into warehousing and inventory management with 25,000 sq ft of storage capacity.' },
+  { year: '2015', label: 'Pan-India Logistics', desc: 'Launched transportation division with a fleet of 20+ vehicles serving Tamil Nadu and Andhra Pradesh.' },
+  { year: '2019', label: '3PL Integration', desc: 'Became an end-to-end 3PL provider combining manpower, warehousing, and transportation under one roof.' },
+  { year: '2022', label: '5,000+ Workforce', desc: 'Crossed 5,000 active deployments across 20+ cities, servicing over 500 enterprise clients.' },
+  { year: '2024', label: 'Digital Transformation', desc: 'Implemented real-time analytics, WMS/HRMS integration, and digital proof-of-delivery across all operations.' },
+];
+
 export default function Founder() {
   return (
-    <section id="founder" className="relative py-24 sm:py-32">
+    <section id="founder" className="relative py-24 sm:py-32 overflow-hidden">
+      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] rounded-full bg-gradient-radial from-gold/[0.01] via-transparent to-transparent blur-3xl pointer-events-none" />
+
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <motion.div
@@ -68,6 +79,48 @@ export default function Founder() {
             </div>
           </motion.div>
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-100px' }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-20"
+        >
+          <div className="mb-10 text-center">
+            <span className="mb-3 inline-block text-[11px] font-semibold uppercase tracking-[0.25em] text-gold/70">
+              Our Journey
+            </span>
+            <h3 className="text-2xl font-bold sm:text-3xl">
+              Company <span className="text-gradient-gold">Milestones</span>
+            </h3>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-gold/40 via-gold/20 to-gold/5 hidden sm:block" />
+
+            <div className="grid gap-6 sm:gap-8">
+              {milestones.map((m, i) => (
+                <motion.div
+                  key={m.year}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.6, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
+                  className="relative flex items-start gap-5 sm:gap-8"
+                >
+                  <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gold/20 bg-[#0A0E1A]">
+                    <span className="text-[10px] font-bold text-gold">{m.year}</span>
+                  </div>
+                  <div className="flex-1 pt-1.5">
+                    <h4 className="text-sm font-bold text-white sm:text-base">{m.label}</h4>
+                    <p className="mt-1 text-sm leading-relaxed text-white/40">{m.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
