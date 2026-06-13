@@ -72,7 +72,7 @@ export default function Founder() {
           >
             <div className="relative mx-auto aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl border border-white/10">
               <Image
-                src="/images/founder.jpeg"
+                src="/images/founder.png"
                 alt="Founder & CEO, Sai Sree Logistics"
                 fill
                 className="object-cover"
