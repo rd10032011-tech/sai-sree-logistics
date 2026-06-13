@@ -56,7 +56,7 @@ const jsonLd = {
       url: "https://saisreelogistics.com",
       logo: "https://saisreelogistics.com/images/logo.jpeg",
       description:
-        "India's Workforce & 3PL Infrastructure Partner. Specializing in Manpower Supply, Warehousing, Transportation, and Integrated 3PL Solutions.",
+        "India's Workforce & 3PL Infrastructure Partner. Pan-India operations. Specializing in Manpower Supply, Warehousing, Transportation, and Integrated 3PL Solutions across all states and industrial corridors.",
       address: {
         "@type": "PostalAddress",
         addressLocality: "Kannigaipair",
@@ -194,7 +194,7 @@ const jsonLd = {
           name: "Which cities do you operate in?",
           acceptedAnswer: {
             "@type": "Answer",
-            text: "We operate across 20+ cities in India including Chennai, Bangalore, Hyderabad, Coimbatore, Salem, Madurai, Tiruchirappalli, and all major industrial belts.",
+            text: "We operate across all major industrial hubs in India — Chennai, Bangalore, Hyderabad, Coimbatore, Salem, Madurai, Tiruchirappalli, Hosur, Pune, Mumbai, Ahmedabad, Delhi NCR, and every key manufacturing and logistics corridor nationwide.",
           },
         },
         {
