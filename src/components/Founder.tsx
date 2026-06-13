@@ -10,12 +10,12 @@ import { useLenisScroll } from '@/lib/lenis-context';
 gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
-  { year: '2008', label: 'Founded in Chennai', desc: 'Began operations with a single client and 15 workers, focusing on industrial manpower supply.', icon: '🏢' },
-  { year: '2012', label: 'Warehousing Launch', desc: 'Expanded into warehousing and inventory management with 25,000 sq ft of storage capacity.', icon: '📦' },
-  { year: '2015', label: 'Pan-India Logistics', desc: 'Launched transportation division with 20+ vehicles serving Tamil Nadu and Andhra Pradesh.', icon: '🚛' },
-  { year: '2019', label: '3PL Integration', desc: 'Became an end-to-end 3PL provider combining manpower, warehousing, and transportation.', icon: '⚡' },
-  { year: '2022', label: '5,000+ Workforce', desc: 'Crossed 5,000 active deployments across 20+ cities, servicing over 500 enterprise clients.', icon: '👥' },
-  { year: '2024', label: 'Digital Transformation', desc: 'Real-time analytics, WMS/HRMS integration, and digital proof-of-delivery across all operations.', icon: '📊' },
+  { year: '2025', label: 'Founded in Chennai', desc: 'Established with a vision to bridge India\'s workforce gap — began operations deploying skilled manpower to industrial clients.', icon: '🏢' },
+  { year: '2025', label: 'Rapid Client Acquisition', desc: 'Secured 100+ enterprise clients within months, scaling to 500+ across manufacturing, e-commerce, and logistics.', icon: '📈' },
+  { year: '2025', label: 'Multi-Service Launch', desc: 'Expanded from manpower supply into warehousing, transportation, and integrated 3PL solutions under one roof.', icon: '⚡' },
+  { year: '2026', label: '5,000+ Workforce', desc: 'Crossed 5,000 active deployments across 20+ cities, servicing over 500 enterprise clients across India.', icon: '👥' },
+  { year: '2026', label: 'Pan-India Operations', desc: 'Extended footprint to 20+ cities with regional hubs in Chennai, Bangalore, Hyderabad, and Coimbatore.', icon: '🚛' },
+  { year: '2026', label: 'Digital Infrastructure', desc: 'Real-time analytics, WMS/HRMS integration, and digital proof-of-delivery powering all operations.', icon: '📊' },
 ];
 
 const values = [
@@ -83,8 +83,8 @@ export default function Founder() {
               <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-primary opacity-30 blur-xl" />
             </div>
             <div className="absolute -bottom-4 -right-4 rounded-2xl border border-gold/20 bg-[#0A0E1A] px-6 py-4 shadow-glow">
-              <p className="text-2xl font-bold text-gold">15+</p>
-              <p className="text-xs text-white/40">Years of Excellence</p>
+              <p className="text-2xl font-bold text-gold">Est.</p>
+              <p className="text-xs text-white/40">2025</p>
             </div>
           </motion.div>
 
@@ -104,8 +104,8 @@ export default function Founder() {
             <div className="space-y-4 text-white/60 leading-relaxed">
               <p>
                 At Sai Sree Logistics, we believe that business success is built on the
-                strength of its people and the efficiency of its supply chain. For over 15 years,
-                we have been India&apos;s trusted partner in workforce management and
+                strength of its people and the efficiency of its supply chain. Since our founding,
+                we have rapidly grown into India&apos;s trusted partner in workforce management and
                 third-party logistics.
               </p>
               <p>

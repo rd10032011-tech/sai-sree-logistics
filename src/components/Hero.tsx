@@ -9,7 +9,7 @@ const metrics = [
   { value: '5,000+', label: 'Workers Deployed' },
   { value: '500+', label: 'Enterprise Clients' },
   { value: '20+', label: 'Cities' },
-  { value: '15+', label: 'Years of Excellence' },
+  { value: 'Est. 2025', label: 'Years of Excellence' },
 ];
 
 export default function Hero() {

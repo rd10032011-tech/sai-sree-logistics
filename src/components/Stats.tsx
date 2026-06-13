@@ -9,10 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
   {
-    value: 15,
+    value: 1,
     suffix: '+',
-    label: 'Years of Excellence',
-    sublabel: 'Serving Indian industry since 2010',
+    label: 'Year of Excellence',
+    sublabel: 'Serving Indian industry since 2025',
   },
   {
     value: 500,

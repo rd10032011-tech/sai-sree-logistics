@@ -67,7 +67,7 @@ const jsonLd = {
       sameAs: [
         "https://www.linkedin.com/company/sai-sree-logistics",
       ],
-      foundingDate: "2008",
+      foundingDate: "2025",
       founder: {
         "@type": "Person",
         name: "B Prabakaran",
