@@ -13,6 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://saisreelogistics.com'),
   title: "Sai Sree Logistics | India's Workforce & 3PL Infrastructure Partner",
   description:
     "Premier logistics and workforce solutions provider in India. Specializing in Manpower Supply, Warehousing, Transportation, and Integrated 3PL Solutions across all major industries.",
@@ -30,6 +31,10 @@ export const metadata: Metadata = {
     "supply chain management India",
     "labour contractors",
   ],
+  icons: {
+    icon: '/images/logo.jpeg',
+    apple: '/images/logo.jpeg',
+  },
   openGraph: {
     title: "Sai Sree Logistics | India's Workforce & 3PL Infrastructure Partner",
     description:
@@ -37,6 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: "Sai Sree Logistics",
+    images: [{ url: '/images/logo.jpeg', width: 800, height: 800 }],
   },
 };
 
