@@ -5,12 +5,24 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 
 export default function ContactCTA() {
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    email: '',
+    service: '',
+    message: '',
+  });
   const [sending, setSending] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
   const btnRef = useRef<HTMLButtonElement>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const updateField = (field: string, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (sending) return;
+    if (sending || submitted) return;
 
     const btn = btnRef.current;
     if (!btn) return;
@@ -38,7 +50,18 @@ export default function ContactCTA() {
         ease: 'power1.inOut',
       });
 
-    setTimeout(() => {
+    try {
+      const res = await fetch('/api/quote', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!res.ok) throw new Error('Failed to send');
+
+      setSubmitted(true);
+      setFormData({ name: '', phone: '', email: '', service: '', message: '' });
+
       if (btn) {
         gsap.timeline()
           .to(btn, {
@@ -64,8 +87,24 @@ export default function ContactCTA() {
           .to(btn, { x: 4, duration: 0.08, ease: 'power2.inOut' })
           .to(btn, { x: 0, duration: 0.08, ease: 'power2.out' });
       }
+    } catch {
+      if (btn) {
+        gsap.timeline()
+          .to(btn, { scale: 1.02, duration: 0.1, onStart: () => {
+            if (btn.querySelector('.btn-spinner')) {
+              gsap.set(btn.querySelector('.btn-spinner'), { display: 'none' });
+            }
+          }})
+          .to(btn.querySelector('.btn-text'), {
+            opacity: 1,
+            innerText: 'Failed — Try Again',
+            duration: 0.15,
+            onComplete: () => gsap.to(btn, { scale: 1, duration: 0.15, ease: 'power2.out' }),
+          });
+      }
+    } finally {
       setSending(false);
-    }, 1500);
+    }
   };
 
   const contactItems = [
@@ -181,12 +220,16 @@ export default function ContactCTA() {
                     type="text"
                     placeholder="Your Name"
                     required
+                    value={formData.name}
+                    onChange={(e) => updateField('name', e.target.value)}
                     className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-gold/50 focus:bg-white/10"
                     whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                   />
                   <motion.input
                     type="tel"
                     placeholder="Your Phone"
+                    value={formData.phone}
+                    onChange={(e) => updateField('phone', e.target.value)}
                     className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-gold/50 focus:bg-white/10"
                     whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                   />
@@ -195,11 +238,14 @@ export default function ContactCTA() {
                   type="email"
                   placeholder="Your Email"
                   required
+                  value={formData.email}
+                  onChange={(e) => updateField('email', e.target.value)}
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-gold/50 focus:bg-white/10"
                   whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                 />
                 <motion.select
-                  defaultValue=""
+                  value={formData.service}
+                  onChange={(e) => updateField('service', e.target.value)}
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white outline-none transition-all duration-300 focus:border-gold/50 focus:bg-white/10 appearance-none"
                   whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                 >
@@ -214,6 +260,8 @@ export default function ContactCTA() {
                   rows={4}
                   placeholder="Tell us about your requirements"
                   required
+                  value={formData.message}
+                  onChange={(e) => updateField('message', e.target.value)}
                   className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-white/30 outline-none transition-all duration-300 focus:border-gold/50 focus:bg-white/10"
                   whileFocus={{ scale: 1.01, borderColor: '#F5A300' }}
                 />
@@ -221,12 +269,12 @@ export default function ContactCTA() {
                   <motion.button
                     ref={btnRef}
                     type="submit"
-                    disabled={sending}
+                    disabled={sending || submitted}
                     className="relative flex-1 overflow-hidden rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-background transition-all duration-300 hover:shadow-gold hover:brightness-110"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.97 }}
                   >
-                    <span className="btn-text">{sending ? 'Sending...' : 'Send Message'}</span>
+                    <span className="btn-text">{submitted ? 'Message Sent!' : sending ? 'Sending...' : 'Send Message'}</span>
                     {sending && (
                       <span
                         className="btn-spinner absolute inset-0 flex items-center justify-center"
@@ -252,6 +300,15 @@ export default function ContactCTA() {
                   </motion.a>
                 </div>
               </form>
+              {submitted && (
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="mt-4 text-sm text-green-400"
+                >
+                  Your message has been sent. Our team will get back to you shortly.
+                </motion.p>
+              )}
             </div>
           </motion.div>
         </div>
