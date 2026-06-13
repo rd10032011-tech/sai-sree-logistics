@@ -81,8 +81,9 @@ export async function POST(request: Request) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Quote email error:', error);
+    const message = error instanceof Error ? error.message : 'Unknown error';
     return NextResponse.json(
-      { error: 'Failed to send message. Please try again later.' },
+      { error: 'Failed to send message.', detail: message },
       { status: 500 },
     );
   }
