@@ -180,7 +180,7 @@ export default function Founder() {
             <div className="grid gap-6 sm:gap-8">
               {milestones.map((m, i) => (
                 <motion.div
-                  key={m.year}
+                  key={`${m.year}-${m.label}`}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
