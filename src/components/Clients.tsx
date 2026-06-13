@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef, useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 const clients = [
   { name: 'Tata Group', category: 'Manufacturing' },
@@ -88,15 +88,13 @@ export default function Clients() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.04, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -4, scale: 1.02 }}
-              className="group relative rounded-xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-5 transition-all duration-500 hover:border-gold/[0.15] hover:shadow-glow"
+              className="relative rounded-xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-5"
             >
-              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-gold/[0.02] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-              <div className="relative z-10 flex flex-col items-center justify-center text-center">
-                <span className="text-sm font-semibold text-white/60 transition-colors duration-300 group-hover:text-gold sm:text-base">
+              <div className="flex flex-col items-center justify-center text-center">
+                <span className="text-sm font-semibold text-white/60 sm:text-base">
                   {client.name}
                 </span>
-                <span className="mt-1 text-[10px] uppercase tracking-[0.15em] text-white/20 transition-colors duration-300 group-hover:text-white/40">
+                <span className="mt-1 text-[10px] uppercase tracking-[0.15em] text-white/20">
                   {client.category}
                 </span>
               </div>
@@ -137,8 +135,7 @@ export default function Clients() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4 }}
-                whileHover={{ y: -3, scale: 1.04 }}
-                className="inline-flex items-center gap-2 rounded-full border border-gold/10 bg-gold/[0.03] px-4 py-2 text-xs font-semibold text-gold/80 transition-all duration-300 hover:border-gold/20 hover:bg-gold/[0.06]"
+                className="inline-flex items-center gap-2 border border-white/[0.06] bg-white/[0.02] px-4 py-2 text-xs font-semibold text-white/50"
               >
                 <span>{badge.icon}</span>
                 {badge.label}
@@ -153,28 +150,14 @@ export default function Clients() {
             <span className="text-gradient-gold">Clients Say</span>
           </h3>
           <div className="relative mx-auto max-w-3xl">
-            <div className="min-h-[200px]">
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeTestimonial}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                  className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-8 text-center"
-                >
-                  <svg className="mx-auto mb-4 h-8 w-8 text-gold/30" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
-                  <p className="mb-6 text-base leading-relaxed text-white/60 sm:text-lg">
-                    {testimonials[activeTestimonial].quote}
-                  </p>
-                  <div>
-                    <p className="font-semibold text-white">{testimonials[activeTestimonial].author}</p>
-                    <p className="text-sm text-gold/60">{testimonials[activeTestimonial].company}</p>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
+            <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-b from-[#0A0E1A] to-[#050816] p-8 text-center">
+              <p className="mb-6 text-base leading-relaxed text-white/60 sm:text-lg">
+                &ldquo;{testimonials[activeTestimonial].quote}&rdquo;
+              </p>
+              <div>
+                <p className="font-semibold text-white">{testimonials[activeTestimonial].author}</p>
+                <p className="text-sm text-gold/60">{testimonials[activeTestimonial].company}</p>
+              </div>
             </div>
 
             <div className="mt-6 flex justify-center gap-2">
@@ -182,8 +165,8 @@ export default function Clients() {
                 <button
                   key={i}
                   onClick={() => setActiveTestimonial(i)}
-                  className={`h-2 rounded-full transition-all duration-300 ${
-                    i === activeTestimonial ? 'w-8 bg-gold' : 'w-2 bg-white/20 hover:bg-white/40'
+                  className={`h-1.5 w-6 transition-all duration-300 ${
+                    i === activeTestimonial ? 'bg-gold' : 'bg-white/10'
                   }`}
                   aria-label={`Testimonial ${i + 1}`}
                 />

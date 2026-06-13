@@ -75,26 +75,15 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background: `
-            radial-gradient(ellipse 70% 30% at 50% 0%, rgba(245,163,0,0.05) 0%, transparent 100%),
-            radial-gradient(ellipse 50% 50% at 25% 30%, rgba(245,163,0,0.02) 0%, transparent 100%),
-            radial-gradient(ellipse 50% 50% at 75% 30%, rgba(179,27,27,0.015) 0%, transparent 100%),
-            linear-gradient(180deg, transparent 50%, #050816 100%)
+            radial-gradient(ellipse 65% 20% at 50% 0%, rgba(245,163,0,0.07) 0%, transparent 100%),
+            linear-gradient(115deg, transparent 32%, rgba(245,163,0,0.035) 42%, rgba(245,163,0,0.045) 47%, transparent 55%),
+            linear-gradient(245deg, transparent 30%, rgba(245,163,0,0.02) 40%, transparent 54%),
+            linear-gradient(180deg, transparent 35%, #050816 100%)
           `,
         }}
       />
 
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'repeating-linear-gradient(90deg, transparent 0%, transparent 8%, rgba(245,163,0,0.015) 8.5%, transparent 9%, transparent 100%)',
-          backgroundSize: '100% 100%',
-        }}
-      />
-
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-transparent via-gold/60 to-transparent pointer-events-none" />
-
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background pointer-events-none" />
+      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-gold/40 to-transparent pointer-events-none" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
         <motion.div
